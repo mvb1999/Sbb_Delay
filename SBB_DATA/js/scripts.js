@@ -24,5 +24,3 @@ async function init(){
 }
 
 init();
-
-var map = L.map('map').setView([46.8182, 8.2275], 8);
