@@ -40,29 +40,6 @@ function sortAndPlotData(data) {
     displayTrainInfo(weekdays, numTrains, numDelayedTrains);
 }
 
-function createChart(weekdays, delays) {
-    const ctx = document.getElementById('sbbDelay').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: weekdays,
-            datasets: [{
-                label: 'Total Delay (minutes)',
-                data: delays,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
 
 function displayTrainInfo(weekdays, numTrains, numDelayedTrains) {
     const trainInfoContainer = document.getElementById('train-info');
