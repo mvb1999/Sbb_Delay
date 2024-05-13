@@ -1,40 +1,9 @@
-body {
-    background-color: #FEFFC0;
-    font-family: 'Inter', sans-serif;
+.mein-bild {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    margin: 0 auto;
 }
 
-h1, h2, p {
-    font-weight: normal;
-    font-size: 20px;
-}
-
-h1 {
-    font-weight: bold;
-}
-
-.city-name {
-    font-size: 15px;
-    font-weight: normal;
-}
-
-.delay-minutes {
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-}
-
-.green {
-    background-color: #5EF251;
-}
-
-.yellow {
-    background-color: #FFF505;
-}
-
-.orange {
-    background-color: #FCB706;
-}
-
-.red {
-    background-color: #FF0000;
-}
