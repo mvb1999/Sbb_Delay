@@ -15,19 +15,15 @@ body {
 
 .info-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Damit die Wochentage bei Bedarf auf mehrere Zeilen umgebrochen werden können */
+    justify-content: space-between; /* Damit die Wochentage gleichmäßig über den Container verteilt werden */
 }
 
 .info-container div {
+    width: calc(50% - 10px); /* Breite auf 50% des Containers minus Platz für den Abstand zwischen den Wochentagen setzen */
+    margin-bottom: 20px; /* Abstand zwischen den Wochentagen */
     background: white;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.info-container p {
-    margin: 5px 0;
-    font-size: 20px;
-    font-weight: bold;
 }
