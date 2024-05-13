@@ -33,9 +33,6 @@ function sortAndPlotData(data) {
     const numTrains = data.map(entry => entry.num_trains);
     const numDelayedTrains = data.map(entry => entry.num_delayed_trains);
 
-    // Erstellung des Diagramms
-    createChart(weekdays, delays);
-
     // Anzeige der Zuginformationen
     displayTrainInfo(weekdays, numTrains, numDelayedTrains);
 }
