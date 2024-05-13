@@ -1,34 +1,25 @@
 <?php
-// Datenbankkonfiguration einbinden
-require_once 'config.php';
-
-// Header setzen, um JSON-Inhaltstyp zurückzugeben
+require_once 'config.php'; // Datenbankkonfiguration einbinden
 header('Content-Type: application/json');
 
 try {
-    // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
     $pdo = new PDO($dsn, $username, $password, $options);
 
-    // SQL-Query, um Daten basierend auf dem Standort auszuwählen, sortiert nach Wochentag
-    $sql = "SELECT AVG(delay_arrival + delay_departure) AS total_delay, week_day
-            FROM `train_journeys`
-            WHERE actual_arrival >= CURDATE() - INTERVAL 30 DAY 
+    $sql = "SELECT week_day,
+                   COUNT(*) AS num_trains,
+                   SUM(CASE WHEN delay_arrival > 0 OR delay_departure > 0 THEN 1 ELSE 0 END) AS num_delayed_trains,
+                   AVG(delay_arrival + delay_departure) AS total_delay
+            FROM train_journeys
+            WHERE actual_arrival >= CURDATE() - INTERVAL 30 DAY
             GROUP BY week_day
             ORDER BY FIELD(week_day, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')";
 
-    // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
-
-    // Führt die Abfrage aus
     $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Holt alle passenden Einträge
-    $results = $stmt->fetchAll();
-
-    // Gibt die Ergebnisse im JSON-Format zurück
     echo json_encode($results);
 } catch (PDOException $e) {
-    // Gibt eine Fehlermeldung zurück, wenn etwas schiefgeht
     echo json_encode(['error' => $e->getMessage()]);
 }
 ?>
