@@ -7,6 +7,7 @@ async function fetchData() {
         const response = await fetch('https://398547-2.web.fhgr.ch/php/unload.php'); // Hier müsstest du den Pfad zu deinem PHP-Skript angeben, das die Daten zurückgibt
         const data = await response.json();
         sortAndPlotData(data);
+        console.log(data)
     } catch (error) {
         console.error('Error:', error);
     }
@@ -39,14 +40,20 @@ function sortAndPlotData(data) {
 
 
 function displayTrainInfo(weekdays, numTrains, numDelayedTrains) {
-    const trainInfoContainer = document.getElementById('train-info');
+    const trainInfoContainer = document.getElementById('week-container');
     trainInfoContainer.innerHTML = ''; // Löscht den aktuellen Inhalt, um neue Daten anzuzeigen
 
     weekdays.forEach((weekday, index) => {
         const info = document.createElement('div');
-        info.innerHTML = `<p>${weekday}</p>
+        /*info.innerHTML = `<p>${weekday}</p>
                           <p>Total Trains: ${numTrains[index]}</p>
                           <p>Delayed Trains: ${numDelayedTrains[index]}</p>`;
+*/
+        //info.innerHTML = "test";
+        info.innerHTML = `<div class="day" id="${weekday}">
+        <div class="delay">2'</div>
+        <div class="delays-count">${numDelayedTrains[index]}/${numTrains[index]}</div>
+    </div>`;                 
         trainInfoContainer.appendChild(info);
     });
 }
