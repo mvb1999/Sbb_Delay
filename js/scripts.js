@@ -40,10 +40,13 @@ function sortAndPlotData(data) {
 
 function displayTrainInfo(weekdays, numTrains, numDelayedTrains) {
     const trainInfoContainer = document.getElementById('train-info');
+    trainInfoContainer.innerHTML = ''; // Löscht den aktuellen Inhalt, um neue Daten anzuzeigen
 
-    for (let i = 0; i < weekdays.length; i++) {
+    weekdays.forEach((weekday, index) => {
         const info = document.createElement('div');
-        info.innerHTML = `<p>${weekdays[i]}</p><p>Total Trains: ${numTrains[i]}</p><p>Delayed Trains: ${numDelayedTrains[i]}</p>`;
+        info.innerHTML = `<p>${weekday}</p>
+                          <p>Total Trains: ${numTrains[index]}</p>
+                          <p>Delayed Trains: ${numDelayedTrains[index]}</p>`;
         trainInfoContainer.appendChild(info);
-    }
+    });
 }
