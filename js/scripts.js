@@ -15,13 +15,13 @@ async function fetchData() {
 function sortAndPlotData(data) {
     // Mapping der Wochentage zu Zahlen, um sie später zu sortieren
     const weekdayOrder = {
-        'Mo': 1,
-        'Di': 2,
-        'Mi': 3,
-        'Do': 4,
-        'Fr': 5,
-        'Sa': 6,
-        'So': 7
+        'Monday': 1,
+        'Tuesday': 2,
+        'Wednesday': 3,
+        'Thursday': 4,
+        'Friday': 5,
+        'Saturday': 6,
+        'Sunday': 7
     };
 
     // Daten sortieren basierend auf den Wochentagen
