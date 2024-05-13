@@ -1,0 +1,40 @@
+body {
+    background-color: #FEFFC0;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, p {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.city-name {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.delay-minutes {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.green {
+    background-color: #5EF251;
+}
+
+.yellow {
+    background-color: #FFF505;
+}
+
+.orange {
+    background-color: #FCB706;
+}
+
+.red {
+    background-color: #FF0000;
+}
