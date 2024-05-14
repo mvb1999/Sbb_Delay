@@ -25,3 +25,24 @@ th {
 .header {
     font-weight: bold;
 }
+
+.map-container {
+    position: relative;
+}
+
+#train {
+    /* position: absolute; */
+    offset-path: path('M0.5 436L2.5 412.5L23.5 374.5L47.5 347.5L76 340.5L86 330L106 320.5L141.5 337H150L169.5 318.5V299L187.5 265.5L218 244L227.5 232.5L245 226L255 210L287 196L308 175H314.5L333 157L337 143V134L372.5 85.5L406 67L418.5 48L421 46L430 29.5H447L464.5 16.5L482.5 12.5L493.5 16.5L519.5 3L538.5 1.5L550.5 11L582.5 20.5L587 18.5L584 9L589 6.5');
+
+    animation: train-animation 30s linear;
+    width: ;
+}
+
+@keyframes train-animation {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }

@@ -8,17 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <style>
-        #train {
-          position: absolute;
-          width: 50px;
-          height: 30px;
-          background-color: #ff0000;
-          border-radius: 15px;
-          transition: transform 0.5s linear;
-        }
-      </style>
+<p>Familie von Bergen will in die Ferien. Herr von Bergen plant gerne und möchte Verspätungen so gut es geht vermeiden.
+    Um zu wissen, welches der beste Tag ist um zu verreisen, schauen sie sich die Zugverbindungen von Genf nach Zürich Flughafen an.</p>
 
 </head>
 <body> 
@@ -67,30 +58,11 @@
                 <td id="so-delayed"></td>
             </tr>
         </table>
-        <img src="images/karte_flughafen.png" alt="karte_schweiz">
 
-        <svg width="600" height="500">
-            <path id="trainPath" d="M0.5 436L2.5 412.5L23.5 374.5L47.5 347.5L76 340.5L86 330L106 320.5L141.5 337H150L169.5 318.5V299L187.5 265.5L218 244L227.5 232.5L245 226L255 210L287 196L308 175H314.5L333 157L337 143V134L372.5 85.5L406 67L418.5 48L421 46L430 29.5H447L464.5 16.5L482.5 12.5L493.5 16.5L519.5 3L538.5 1.5L550.5 11L582.5 20.5L587 18.5L584 9L589 6.5" fill="none" stroke="#000" stroke-width="2"/>
-          </svg>
-          <div id="train"></div>
-        
-          <script>
-            const path = document.querySelector("#trainPath");
-            const train = document.querySelector("#train");
-            const pathLength = path.getTotalLength();
-            let distance = 0;
-        
-            function moveTrain() {
-              if (distance < pathLength) {
-                const point = path.getPointAtLength(distance);
-                train.style.transform = `translate(${point.x}px, ${point.y}px)`;
-                distance += 2; // Adjust speed here
-                requestAnimationFrame(moveTrain);
-              }
-            }
-        
-            moveTrain();
-          </script>
+        <div class="map-container">
+            <img src="images/karte_flughafen.png" alt="karte_schweiz">
+            <img src="images/fahrender_zug.png" id="train" alt="Fahrender Zug">
+        </div>
 
     </main>
     <footer>
