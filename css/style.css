@@ -115,3 +115,99 @@ img {
     width: 505px; /* Fixierte Breite des Bildes */
     height: 384px; /* Fixierte Höhe des Bildes */
 }
+
+/* Media Queries für Responsiveness */
+@media (max-width: 1200px) {
+    .map-container {
+        width: 600px; /* Verkleinerte Breite für mittelgroße Bildschirme */
+        height: 600px;
+    }
+
+    .map-container img {
+        width: 400px; /* Verkleinerte Breite für das Bild */
+        height: 300px;
+    }
+
+    #train {
+        left: 150px; /* Anpassung der Zugposition */
+        top: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .map-container {
+        width: 400px; /* Verkleinerte Breite für kleinere Bildschirme */
+        height: 400px;
+    }
+
+    .map-container img {
+        width: 300px; /* Verkleinerte Breite für das Bild */
+        height: 225px;
+    }
+
+    #train {
+        left: 100px; /* Anpassung der Zugposition */
+        top: 40px;
+    }
+
+    table {
+        width: 100%; /* Breite auf 100% setzen */
+        padding: 10px; /* Verringerung der Polsterung für kleinere Bildschirme */
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 1em;
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Verkleinerung der Schriftgröße für kleinere Bildschirme */
+    }
+
+    header p {
+        font-size: 1em;
+    
+    }
+    #train {
+        left: 80px; /* Anpassung der Zugposition */
+        top: 30px;
+        offset-path: path('M0.5 135.25L1 128.25L7.5 116.75L15.25 108L24.25 105.5L27 103L33.25 100.25L42.5 104.75H47.5L53 100.25V93.25L58.25 82.75L67.75 76.5L70.5 72.75L76.5 70.75L79 65.5L89.25 61.25L96.25 54.5H99.25L103.75 48.5L104.5 41.75L115.75 27L126.75 21.5L133.75 9.75H139L144.25 5.75L150.5 4L154 5.75L162.25 1.5L167.75 0.75L171 4L181.5 7L182.75 2.25');
+    }
+
+}
+
+@media (max-width: 500px) {
+    .map-container {
+        width: 300px; /* Verkleinerte Breite für sehr kleine Bildschirme */
+        height: 300px;
+    }
+
+    .map-container img {
+        width: 250px; /* Verkleinerte Breite für das Bild */
+        height: 187.5px;
+    }
+
+    #train {
+        left:40px; /* Anpassung der Zugposition */
+        top: 30px;
+        offset-path: path('M1 134L1.49383 127.078L7.91358 115.706L15.5679 107.054L24.4568 104.582L27.1728 102.11L33.3457 99.3903L42.4815 103.84H47.4198L52.8519 99.3903V92.4684L58.037 82.0855L67.4198 75.9052L70.1358 72.197L76.0617 70.2193L78.5309 65.0279L88.6543 60.8253L95.5679 54.1506H98.5309L102.975 48.2175L103.716 41.5428L114.827 26.9572L125.691 21.5186L132.605 9.89963H137.79L142.975 5.94424L149.148 4.21375L152.605 5.94424L159.765 1.74164L166.185 1L169.395 4.21375L179.765 7.1803L181 2.48327');
+    }
+
+    table {
+        display: block;
+        padding: 20px;
+
+    th, td {
+        padding: 4px;
+        font-size: 0.6em;
+    }
+
+    header h1 {
+        font-size: 0.8em; /* Weitere Verkleinerung der Schriftgröße */
+    }
+
+    header p {
+        font-size: 0.6em;
+    }
+   
+}
