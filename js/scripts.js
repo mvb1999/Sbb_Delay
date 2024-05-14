@@ -55,21 +55,21 @@ function sortAndPlotData(data) {
 
 // Diese Funktion zeigt die Zuginformationen in einer Tabelle an.
 function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) {
-    const trainInfoContainer = document.getElementById('train-info');
-    trainInfoContainer.innerHTML = '';
-
     const abbreviatedWeekdays = abbreviateWeekdays(weekdays);
 
     abbreviatedWeekdays.forEach((weekday, index) => {
-        const info = document.createElement('div');
         const delayedTrainsPercentage = `${numDelayedTrains[index]}/${numTrains[index]}`;
-        const averageDelay = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) : 'N/A';
-        info.innerHTML = `
-            <p>${weekday}</p>
-            <p>Anzahl Züge: ${numTrains[index]}</p>
-            <p>Davon verspätet: ${delayedTrainsPercentage}</p>
-            <p>Durchschnittliche Verspätung: ${averageDelay}min</p>`;
-        trainInfoContainer.appendChild(info);
+        const averageDelay = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) + 'min' : 'N/A';
+
+        // IDs für die aktuellen Zellen
+        const trainsId = `${weekday.toLowerCase()}-trains`;
+        const delayedId = `${weekday.toLowerCase()}-delayed`;
+        const delayId = `${weekday.toLowerCase()}-delay`;
+
+        // Zellen in der Tabelle aktualisieren
+        document.getElementById(trainsId).textContent = numTrains[index];
+        document.getElementById(delayedId).textContent = delayedTrainsPercentage;
+        document.getElementById(delayId).textContent = averageDelay;
     });
 }
 
@@ -84,28 +84,4 @@ function calculateAverageDelay(weekdays, delays, numTrains) {
     });
 
     return averageDelays;
-}
-
-// Diese Funktion zeigt die Zuginformationen in einer Tabelle an.
-function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) {
-    // IDs für die Tabellenzellen
-    const cellIds = {
-        'Mo': ['mo-trains', 'mo-delayed', 'mo-delay'],
-        'Di': ['di-trains', 'di-delayed', 'di-delay'],
-        'Mi': ['mi-trains', 'mi-delayed', 'mi-delay'],
-        'Do': ['do-trains', 'do-delayed', 'do-delay'],
-        'Fr': ['fr-trains', 'fr-delayed', 'fr-delay'],
-        'Sa': ['sa-trains', 'sa-delayed', 'sa-delay'],
-        'So': ['so-trains', 'so-delayed', 'so-delay']
-    };
-
-    // Durch die verkürzten Wochentage iterieren
-    abbreviatedWeekdays.forEach((weekday, index) => {
-        // IDs für die aktuellen Zellen
-        const [trainsId, delayedId, delayId] = cellIds[weekday];
-        // Zellen in der Tabelle aktualisieren
-        document.getElementById(trainsId).textContent = numTrains[index];
-        document.getElementById(delayedId).textContent = `${numDelayedTrains[index]}/${numTrains[index]}`;
-        document.getElementById(delayId).textContent = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) + 'min' : 'N/A';
-    });
 }
