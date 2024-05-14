@@ -58,7 +58,7 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
     const abbreviatedWeekdays = abbreviateWeekdays(weekdays);
 
     abbreviatedWeekdays.forEach((weekday, index) => {
-        const delayedTrainsPercentage = `${numDelayedTrains[index]}/${numTrains[index]}`;
+        const delayedTrainsCount = numDelayedTrains[index]; // Anzahl der verspäteten Züge
         const averageDelay = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) + 'min' : 'N/A';
 
         // IDs für die aktuellen Zellen
@@ -68,10 +68,11 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
 
         // Zellen in der Tabelle aktualisieren
         document.getElementById(trainsId).textContent = numTrains[index];
-        document.getElementById(delayedId).textContent = delayedTrainsPercentage;
+        document.getElementById(delayedId).textContent = delayedTrainsCount; // Nur die Anzahl der verspäteten Züge anzeigen
         document.getElementById(delayId).textContent = averageDelay;
     });
 }
+
 
 // Diese Funktion berechnet die durchschnittliche Verspätung für jeden Wochentag.
 function calculateAverageDelay(weekdays, delays, numTrains) {
