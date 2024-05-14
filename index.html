@@ -4,67 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBB Delay</title>
-    <link rel=""stylesheet" href="css/style.css">
-    <style>
-        body {
-            background-color: #FEFFC0;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body> 
     <header>
     </header>
     <main>
-        <div id="train-info">
-            <div class="weekday-row">
-                <div class="weekday">Wochentag</div>
-                <div class="data">Anzahl Züge</div>
-                <div class="data">Davon verspätet</div>
-                <div class="data">Durchschnittliche Verspätung</div>
-            </div>
-            <!-- Hier werden die Daten für jeden Wochentag eingefügt -->
-        </div>
-        <div class="week-container" id="week-container">
-            <div class="day" id="monday">
-                <div class="delay">2'</div>
-                <div class="delays-count">233/10</div>
-            </div>
-            <div class="day" id="tuesday">
-                <div class="delay">7'</div>
-                <div class="delays-count">3/10</div>
-            </div>
-            <div class="day" id="wednesday">
-                <div class="delay">4'</div>
-                <div class="delays-count">1/10</div>
-            </div>
-            <div class="day" id="thursday">
-                <div class="delay">7'</div>
-                <div class="delays-count">3/10</div>
-            </div>
-            <div class="day" id="friday">
-                <div class="delay">7'</div>
-                <div class="delays-count">3/10</div>
-            </div>
-            <div class="day" id="saturday">
-                <div class="delay">7'</div>
-                <div class="delays-count">3/10</div>
-            </div>
-            <div class="day" id="sunday">
-                <div class="delay">7'</div>
-                <div class="delays-count">3/10</div>
-            </div>
-        </div>
+        <table>
+            <tr>
+                <td></td>
+                <td>Mo</td>
+                <td>Di</td>
+                <td>Mi</td>
+                <td>Do</td>
+                <td>Fr</td>
+                <td>Sa</td>
+                <td>So</td>
+            </tr>
+            <tr>
+                <td class="header">Durchschnittliche Verspätung</td>
+                <td id="mo-delay"></td>
+                <td id="di-delay"></td>
+                <td id="mi-delay"></td>
+                <td id="do-delay"></td>
+                <td id="fr-delay"></td>
+                <td id="sa-delay"></td>
+                <td id="so-delay"></td>
+            </tr>
+            <tr>
+                <td class="header">Anzahl Züge</td>
+                <td id="mo-trains"></td>
+                <td id="di-trains"></td>
+                <td id="mi-trains"></td>
+                <td id="do-trains"></td>
+                <td id="fr-trains"></td>
+                <td id="sa-trains"></td>
+                <td id="so-trains"></td>
+            </tr>
+            <tr>
+                <td class="header">Davon verspätet</td>
+                <td id="mo-delayed"></td>
+                <td id="di-delayed"></td>
+                <td id="mi-delayed"></td>
+                <td id="do-delayed"></td>
+                <td id="fr-delayed"></td>
+                <td id="sa-delayed"></td>
+                <td id="so-delayed"></td>
+            </tr>
+        </table>
 
         <img src="images/karte_schweiz.png" alt="karte_schweiz">
-          
-        
     </main>
     <footer>
 
     </footer>
     <script src="js/scripts.js"></script>
-    
-
 </body>
 </html>

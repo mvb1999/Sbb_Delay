@@ -21,17 +21,17 @@ function abbreviateWeekday(weekday) {
         case 'Monday':
             return 'Mo';
         case 'Tuesday':
-            return 'Tu';
+            return 'Di';
         case 'Wednesday':
-            return 'We';
+            return 'Mi';
         case 'Thursday':
-            return 'Th';
+            return 'Do';
         case 'Friday':
             return 'Fr';
         case 'Saturday':
             return 'Sa';
         case 'Sunday':
-            return 'Su';
+            return 'So';
         default:
             return weekday;
     }
@@ -84,4 +84,28 @@ function calculateAverageDelay(weekdays, delays, numTrains) {
     });
 
     return averageDelays;
+}
+
+// Diese Funktion zeigt die Zuginformationen in einer Tabelle an.
+function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) {
+    // IDs für die Tabellenzellen
+    const cellIds = {
+        'Mo': ['mo-trains', 'mo-delayed', 'mo-delay'],
+        'Di': ['di-trains', 'di-delayed', 'di-delay'],
+        'Mi': ['mi-trains', 'mi-delayed', 'mi-delay'],
+        'Do': ['do-trains', 'do-delayed', 'do-delay'],
+        'Fr': ['fr-trains', 'fr-delayed', 'fr-delay'],
+        'Sa': ['sa-trains', 'sa-delayed', 'sa-delay'],
+        'So': ['so-trains', 'so-delayed', 'so-delay']
+    };
+
+    // Durch die verkürzten Wochentage iterieren
+    abbreviatedWeekdays.forEach((weekday, index) => {
+        // IDs für die aktuellen Zellen
+        const [trainsId, delayedId, delayId] = cellIds[weekday];
+        // Zellen in der Tabelle aktualisieren
+        document.getElementById(trainsId).textContent = numTrains[index];
+        document.getElementById(delayedId).textContent = `${numDelayedTrains[index]}/${numTrains[index]}`;
+        document.getElementById(delayId).textContent = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) + 'min' : 'N/A';
+    });
 }
