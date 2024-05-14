@@ -8,54 +8,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<p>Familie von Bergen will in die Ferien. Herr von Bergen plant gerne und möchte Verspätungen so gut es geht vermeiden.
-    Um zu wissen, welches der beste Tag ist um zu verreisen, schauen sie sich die Zugverbindungen von Genf nach Zürich Flughafen an.</p>
-
 </head>
-<body> 
-    <header>
-    </header>
+<body>
+    <header></header>
     <main>
         <table id="sbbdelay">
             <tr>
                 <td></td>
-                <td>Mo</td>
-                <td>Di</td>
-                <td>Mi</td>
-                <td>Do</td>
-                <td>Fr</td>
-                <td>Sa</td>
-                <td>So</td>
+                <td class="day-label">MO</td>
+                <td class="day-label">DI</td>
+                <td class="day-label">MI</td>
+                <td class="day-label">DO</td>
+                <td class="day-label">FR</td>
+                <td class="day-label">SA</td>
+                <td class="day-label">SO</td>
             </tr>
             <tr>
-                <td class="header">Durchschnittliche Verspätung</td>
-                <td id="mo-delay"></td>
-                <td id="di-delay"></td>
-                <td id="mi-delay"></td>
-                <td id="do-delay"></td>
-                <td id="fr-delay"></td>
-                <td id="sa-delay"></td>
-                <td id="so-delay"></td>
+                <td class="header">Ø in Min</td>
+                <td id="mo-delay">2'</td>
+                <td id="di-delay">7'</td>
+                <td id="mi-delay">4'</td>
+                <td id="do-delay">6'</td>
+                <td id="fr-delay">15'</td>
+                <td id="sa-delay">1'</td>
+                <td id="so-delay">3'</td>
             </tr>
             <tr>
                 <td class="header">Anzahl Züge</td>
-                <td id="mo-trains"></td>
-                <td id="di-trains"></td>
-                <td id="mi-trains"></td>
-                <td id="do-trains"></td>
-                <td id="fr-trains"></td>
-                <td id="sa-trains"></td>
-                <td id="so-trains"></td>
+                <td id="mo-trains">10</td>
+                <td id="di-trains">10</td>
+                <td id="mi-trains">10</td>
+                <td id="do-trains">10</td>
+                <td id="fr-trains">10</td>
+                <td id="sa-trains">10</td>
+                <td id="so-trains">10</td>
             </tr>
             <tr>
                 <td class="header">Davon verspätet</td>
-                <td id="mo-delayed"></td>
-                <td id="di-delayed"></td>
-                <td id="mi-delayed"></td>
-                <td id="do-delayed"></td>
-                <td id="fr-delayed"></td>
-                <td id="sa-delayed"></td>
-                <td id="so-delayed"></td>
+                <td id="mo-delayed">2</td>
+                <td id="di-delayed">3</td>
+                <td id="mi-delayed">1</td>
+                <td id="do-delayed">4</td>
+                <td id="fr-delayed">3</td>
+                <td id="sa-delayed">1</td>
+                <td id="so-delayed">1</td>
             </tr>
         </table>
 
@@ -63,11 +59,8 @@
             <img src="images/karte_flughafen.png" alt="karte_schweiz">
             <img src="images/fahrender_zug.png" id="train" alt="Fahrender Zug">
         </div>
-
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="js/scripts.js"></script>
 </body>
 </html>
