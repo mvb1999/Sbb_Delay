@@ -59,7 +59,7 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
 
     abbreviatedWeekdays.forEach((weekday, index) => {
         const delayedTrainsCount = numDelayedTrains[index]; // Anzahl der verspäteten Züge
-        const averageDelay = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2) + 'min' : 'N/A';
+        const averageDelay = averageDelays[weekdays[index]] ? averageDelays[weekdays[index]].toFixed(2): 'N/A';
 
         // IDs für die aktuellen Zellen
         const trainsId = `${weekday.toLowerCase()}-trains`;
