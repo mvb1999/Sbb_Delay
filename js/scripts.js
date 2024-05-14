@@ -74,9 +74,9 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
         // Hintergrundfarbe basierend auf dem Wert setzen
         const delayValue = parseFloat(averageDelays[weekdays[index]]);
         const delayCell = document.getElementById(delayId);
-        if (delayValue <= 3) {
+        if (delayValue <= 1) {
             delayCell.style.backgroundColor = '#90EE90'; // Hellgrün
-        } else if (delayValue <= 10) {
+        } else if (delayValue <= 2) {
             delayCell.style.backgroundColor = '#FFA500'; // Orange
         } else {
             delayCell.style.backgroundColor = '#FF6347'; // Rot
@@ -86,13 +86,22 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
 
 // Diese Funktion berechnet die durchschnittliche Verspätung für jeden Wochentag.
 function calculateAverageDelay(weekdays, delays, numTrains) {
-    const averageDelays = {};
+    const totalDelays = {};
+    const totalTrains = {};
 
     weekdays.forEach((weekday, index) => {
-        if (!averageDelays[weekday]) {
-            averageDelays[weekday] = delays[index] / numTrains[index];
+        if (!totalDelays[weekday]) {
+            totalDelays[weekday] = 0;
+            totalTrains[weekday] = 0;
         }
+        totalDelays[weekday] += delays[index];
+        totalTrains[weekday] += numTrains[index];
     });
+
+    const averageDelays = {};
+    for (const weekday in totalDelays) {
+        averageDelays[weekday] = totalDelays[weekday] / totalTrains[weekday];
+    }
 
     return averageDelays;
 }
