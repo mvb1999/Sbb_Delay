@@ -16,7 +16,15 @@
     <header>
     </header>
     <main>
-        <div class="info-container" id="train-info"></div>
+        <div id="train-info">
+            <div class="weekday-row">
+                <div class="weekday">Wochentag</div>
+                <div class="data">Anzahl Züge</div>
+                <div class="data">Davon verspätet</div>
+                <div class="data">Durchschnittliche Verspätung</div>
+            </div>
+            <!-- Hier werden die Daten für jeden Wochentag eingefügt -->
+        </div>
         <div class="week-container" id="week-container">
             <div class="day" id="monday">
                 <div class="delay">2'</div>
@@ -47,6 +55,8 @@
                 <div class="delays-count">3/10</div>
             </div>
         </div>
+
+        <img src="images/karte_schweiz.png" alt="karte_schweiz">
           
         
     </main>
@@ -54,7 +64,7 @@
 
     </footer>
     <script src="js/scripts.js"></script>
-    <img src="images/karte_schweiz.png" alt="karte_schweiz">
+    
 
 </body>
 </html>
