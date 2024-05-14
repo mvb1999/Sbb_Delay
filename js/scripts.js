@@ -70,9 +70,19 @@ function displayTrainInfo(weekdays, numTrains, numDelayedTrains, averageDelays) 
         document.getElementById(trainsId).textContent = numTrains[index];
         document.getElementById(delayedId).textContent = delayedTrainsCount; // Nur die Anzahl der verspäteten Züge anzeigen
         document.getElementById(delayId).textContent = averageDelay;
+
+        // Hintergrundfarbe basierend auf dem Wert setzen
+        const delayValue = parseFloat(averageDelays[weekdays[index]]);
+        const delayCell = document.getElementById(delayId);
+        if (delayValue <= 3) {
+            delayCell.style.backgroundColor = '#90EE90'; // Hellgrün
+        } else if (delayValue <= 10) {
+            delayCell.style.backgroundColor = '#FFA500'; // Orange
+        } else {
+            delayCell.style.backgroundColor = '#FF6347'; // Rot
+        }
     });
 }
-
 
 // Diese Funktion berechnet die durchschnittliche Verspätung für jeden Wochentag.
 function calculateAverageDelay(weekdays, delays, numTrains) {

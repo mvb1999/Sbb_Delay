@@ -36,7 +36,7 @@ table {
     border-collapse: collapse;
     width: auto;
     margin: 20px 0;
-    background-color: #FEFFC0;
+    background-color: #d0d19f;
     border-radius: 30px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -60,21 +60,19 @@ th, td {
 }
 
 #mo-delay, #sa-delay {
-    background-color: #90EE90; /* Hellgrün */
     border-radius: 50%;
     color: black;
     padding: 10px;
 }
 
 #di-delay, #do-delay, #fr-delay {
-    background-color: #FF6347; /* Rot */
     border-radius: 50%;
     color: black;
     padding: 10px;
 }
 
 #mi-delay, #so-delay {
-    background-color: #FFA500; /* Orange */
+    
     border-radius: 50%;
     color: black;
     padding: 10px;
@@ -92,7 +90,7 @@ th, td {
     left: 180px;
     top: 62px;
     offset-path: path('M1 270.5L2 256.5L15 233.5L30.5 216L48.5 211L54 206L66.5 200.5L85 209.5H95L106 200.5V186.5L116.5 165.5L135.5 153L141 145.5L153 141.5L158 131L178.5 122.5L192.5 109H198.5L207.5 97L209 83.5L231.5 54L253.5 43L267.5 19.5H278L288.5 11.5L301 8L308 11.5L322.5 3L335.5 1.5L342 8L363 14L365.5 4.5');
-    animation: train-animation 30s linear;
+    animation: train-animation 20s linear infinite;
     width: 30px;
     height: 30px;
 }
@@ -129,8 +127,10 @@ img {
     }
 
     #train {
-        left: 150px; /* Anpassung der Zugposition */
+        left: 120px; /* Anpassung der Zugposition */
         top: 50px;
+        offset-path: path('M1 215L1.79012 203.862L12.0617 185.565L24.3086 171.643L38.5309 167.665L42.8765 163.688L52.7531 159.312L67.3704 166.472H75.2716L83.963 159.312V148.175L92.2593 131.468L107.272 121.524L111.617 115.558L121.099 112.375L125.049 104.022L141.247 97.2602L152.309 86.5204H157.049L164.16 76.974L165.346 66.2342L183.123 42.7658L200.506 34.0149L211.568 15.3197H219.864L228.16 8.95539L238.037 6.171L243.568 8.95539L255.025 2.19331L265.296 1L270.432 6.171L287.025 10.9442L289 3.38662');
+
     }
 }
 
@@ -146,8 +146,9 @@ img {
     }
 
     #train {
-        left: 100px; /* Anpassung der Zugposition */
-        top: 40px;
+        left: 75px; /* Anpassung der Zugposition */
+        top: 50px;
+        offset-path: path('M0.5 135.25L1 128.25L7.5 116.75L15.25 108L24.25 105.5L27 103L33.25 100.25L42.5 104.75H47.5L53 100.25V93.25L58.25 82.75L67.75 76.5L70.5 72.75L76.5 70.75L79 65.5L89.25 61.25L96.25 54.5H99.25L103.75 48.5L104.5 41.75L115.75 27L126.75 21.5L133.75 9.75H139L144.25 5.75L150.5 4L154 5.75L162.25 1.5L167.75 0.75L171 4L181.5 7L182.75 2.25');
     }
 
     table {
@@ -167,11 +168,6 @@ img {
     header p {
         font-size: 1em;
     
-    }
-    #train {
-        left: 80px; /* Anpassung der Zugposition */
-        top: 30px;
-        offset-path: path('M0.5 135.25L1 128.25L7.5 116.75L15.25 108L24.25 105.5L27 103L33.25 100.25L42.5 104.75H47.5L53 100.25V93.25L58.25 82.75L67.75 76.5L70.5 72.75L76.5 70.75L79 65.5L89.25 61.25L96.25 54.5H99.25L103.75 48.5L104.5 41.75L115.75 27L126.75 21.5L133.75 9.75H139L144.25 5.75L150.5 4L154 5.75L162.25 1.5L167.75 0.75L171 4L181.5 7L182.75 2.25');
     }
 
 }
@@ -201,7 +197,7 @@ img {
         padding: 4px;
         font-size: 0.6em;
     }
-
+    }
     header h1 {
         font-size: 0.8em; /* Weitere Verkleinerung der Schriftgröße */
     }
