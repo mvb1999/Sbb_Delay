@@ -6,7 +6,7 @@ $data = include('extract.php');
 // Initialize an array to store the transformed data
 $transformedData = [];
 
-// Transform and add the necessary information about each train connection directly from St. Gallen to Geneva
+// Transform and add the necessary information about each train connection 
 foreach ($data['connections'] as $connection) {
     $from = $connection['from'];
     $to = $connection['to'];
